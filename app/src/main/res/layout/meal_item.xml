@@ -6,18 +6,21 @@
     app:cardCornerRadius="16dp"
     app:cardElevation="4dp"
     android:padding="10dp"
-    android:layout_margin="4dp">
+
+    android:layout_margin="4dp"
+    android:layout_marginLeft="10dp"
+    >
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="vertical"
         android:padding="16dp">
 
         <ImageView
             android:id="@+id/meal_image"
-            android:layout_width="match_parent"
+            android:layout_width="135dp"
             android:layout_height="135dp"
             android:scaleType="centerCrop" />
 
@@ -39,7 +42,7 @@
     android:id="@+id/add_button"
     android:layout_width="wrap_content"
     android:layout_height="36dp"
-    android:layout_marginTop="5dp"
+
     android:background="@drawable/button_custom_oranje"
     app:backgroundTint="@null"
     android:gravity="center_horizontal"
@@ -52,7 +55,7 @@
     android:layout_width="25dp"
     android:layout_height="25dp"
     android:layout_marginLeft="8dp"
-    android:layout_marginTop="8dp"
+
     android:background="@drawable/ic_heart"
     app:backgroundTint="@null"
     android:gravity="center_horizontal"

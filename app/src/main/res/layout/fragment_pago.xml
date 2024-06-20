@@ -20,28 +20,34 @@
             android:padding="10dp">
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+
+                >
 
                 <ImageView
+                    android:id="@+id/back_confirmar_compra"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:background="@drawable/ic_pay" />
+                    android:background="@drawable/arrow_white"
+                    android:layout_marginRight="110dp"
+                    >
+                </ImageView>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Pagar"
+                    android:text="PAGO"
+                    android:fontFamily="@font/baloo_chettan"
                     android:textColor="@color/white"
                     android:textSize="30dp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:layout_gravity="center"
+                    />
+
             </LinearLayout>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="5dp"
-                android:background="@color/colorIconos" />
 
         </LinearLayout>
         <!-- Primer recuadro: Resumen de la orden -->
@@ -66,6 +72,7 @@
             android:textSize="16sp" />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnEditarPagar"
             android:layout_width="100dp"
             android:layout_height="35dp"
             android:background="@drawable/button_custom_oranje"
@@ -76,12 +83,10 @@
             android:textColor="@color/white" />
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/productoPago"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:textSize="14sp" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/productoPago"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
 
 
@@ -114,7 +119,7 @@
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:layout_gravity="center_horizontal"
-                android:src="@drawable/qr" />
+                android:src="@drawable/img_qr" />
         </LinearLayout>
 
         <!-- Tercer recuadro: Tiempo estimado -->

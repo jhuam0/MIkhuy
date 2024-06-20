@@ -3,7 +3,7 @@
 
     <item android:drawable="@drawable/white_circle"/>
 
-    <item android:drawable="@drawable/empanadas">
+    <item android:drawable="@drawable/img_empanadas">
         <padding android:bottom="10dp"  android:left="10dp"
             android:right="10dp"
             android:top="15dp" />

@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_carritoCompras_to_confirmarPedido"
             app:destination="@id/confirmarPedido" />
+        <action
+            android:id="@+id/action_carritoCompras_to_home2"
+            app:destination="@id/home2" />
     </fragment>
     <fragment
         android:id="@+id/confirmarPedido"
@@ -31,6 +34,9 @@
         <action
             android:id="@+id/action_confirmarPedido_to_pago"
             app:destination="@id/pago" />
+        <action
+            android:id="@+id/action_confirmarPedido_to_home2"
+            app:destination="@id/home2" />
     </fragment>
     <fragment
         android:id="@+id/pago"
@@ -40,12 +46,22 @@
         <action
             android:id="@+id/action_pago_to_confirmacion"
             app:destination="@id/confirmacion" />
+        <action
+            android:id="@+id/action_pago_to_confirmarPedido"
+            app:destination="@id/confirmarPedido" />
+        <action
+            android:id="@+id/action_pago_to_home2"
+            app:destination="@id/home2" />
     </fragment>
     <fragment
         android:id="@+id/confirmacion"
         android:name="com.example.myappdecomida.Confirmacion"
         android:label="fragment_confirmacion"
-        tools:layout="@layout/fragment_confirmacion" />
+        tools:layout="@layout/fragment_confirmacion" >
+        <action
+            android:id="@+id/action_confirmacion_to_home2"
+            app:destination="@id/home2" />
+    </fragment>
 
 
 </navigation>

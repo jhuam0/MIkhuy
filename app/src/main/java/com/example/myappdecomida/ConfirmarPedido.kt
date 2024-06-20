@@ -10,8 +10,9 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.example.myappdecomida.Repository.Dish
+import com.example.myappdecomida.comida.Cart
 import com.squareup.picasso.Picasso
 
 class ConfirmarPedido : Fragment() {
@@ -100,8 +101,25 @@ class ConfirmarPedido : Fragment() {
         val confirmButton = view.findViewById<Button>(R.id.confirm_button)
         confirmButton.setOnClickListener {
             val action = R.id.action_confirmarPedido_to_pago
+
+            // Crear un Bundle y poner los datos que quieres enviar
+            val bundle = Bundle()
+            val productNames = Cart.items.keys.map { it.strMeal }.toTypedArray()
+            val productQuantities = Cart.items.values.toIntArray()
+            bundle.putStringArray("productNames", productNames)
+            bundle.putIntArray("productQuantities", productQuantities)
+            bundle.putDouble("total", total)
+
+            // Navegar al fragmento de pago y pasar el Bundle como argumento
+            findNavController().navigate(action, bundle)
+        }
+
+        val back_carrito_compras = view.findViewById<Button>(R.id.back_carrito_compras)
+        confirmButton.setOnClickListener {
+            val action = R.id.action_confirmarPedido_to_home2
             findNavController().navigate(action)
         }
+
     }
 
     companion object {

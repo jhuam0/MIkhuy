@@ -31,9 +31,7 @@
         <activity
             android:name=".NavBar"
             android:exported="false" />
-        <activity
-            android:name=".CustomNavBar"
-            android:exported="false" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">

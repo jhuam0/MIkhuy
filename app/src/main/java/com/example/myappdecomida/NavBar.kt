@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
+import com.example.myappdecomida.Home
+import com.example.myappdecomida.comida.Comida
 import com.example.myappdecomida.databinding.ActivityNavBarBinding
 import com.example.myappdecomida.pedidos.Pedidos
 

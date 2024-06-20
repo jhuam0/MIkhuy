@@ -19,12 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/favoritehome" />
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -32,12 +27,23 @@
                 android:text="Favoritos"
                 android:textColor="@color/white"
                 android:textSize="30dp"
+                android:fontFamily="@font/baloo_chettan"
                 android:textStyle="bold" />
+
+
         </LinearLayout>
-        <View
+        <EditText
+            android:id="@+id/filter_Favorites"
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
-            android:layout_height="5dp"
-            android:background="@color/colorIconos" />
+            android:layout_height="40dp"
+            android:background="@drawable/lavender_border"
+            android:drawableRight="@drawable/ic_search_orange"
+            android:paddingRight="20dp"
+
+            >
+
+        </EditText>
         <HorizontalScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"

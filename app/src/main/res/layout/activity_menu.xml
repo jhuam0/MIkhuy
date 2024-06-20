@@ -71,7 +71,7 @@
             android:layout_marginTop="10dp"
             android:background="@drawable/round_outline"
             android:clipToOutline="true"
-            android:src="@drawable/foodtime" />
+            android:src="@drawable/img_foodtime" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -248,7 +248,7 @@
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/arrozconpollo" />
+                        android:src="@drawable/img_arrozconpollo" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -290,7 +290,7 @@
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/empanadas" />
+                        android:src="@drawable/img_empanadas" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -332,7 +332,7 @@
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/pollofrito" />
+                        android:src="@drawable/img_pollofrito" />
 
                 </androidx.cardview.widget.CardView>
 

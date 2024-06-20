@@ -1,5 +1,6 @@
 package com.example.myappdecomida
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -11,8 +12,10 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.myappdecomida.Repository.Dish
 import com.squareup.picasso.Picasso
-import androidx.lifecycle.ViewModelProvider
+import com.example.myappdecomida.comida.Cart
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class CarritoCompras : Fragment() {
 
@@ -33,6 +36,8 @@ class CarritoCompras : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val navBar = activity?.findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+        navBar?.visibility = View.GONE
 
         val confirmButton = view.findViewById<Button>(R.id.confirm_button)
         confirmButton.setOnClickListener {
@@ -41,6 +46,11 @@ class CarritoCompras : Fragment() {
                 putParcelableArray("cartItems", cartItems.toTypedArray())
             }
             findNavController().navigate(R.id.action_carritoCompras_to_confirmarPedido, bundle)
+        }
+
+        val backButton = view.findViewById<Button>(R.id.back_confirmar_compra)
+        backButton.setOnClickListener {
+            findNavController().navigate(R.id.action_carritoCompras_to_home2)
         }
 
         val cartLayout = view.findViewById<LinearLayout>(R.id.cart_layout)
@@ -68,6 +78,15 @@ class CarritoCompras : Fragment() {
             // Imprimir los datos en la consola de depuración
             Log.d("CarritoCompras", "Nombre del producto: ${item.strMeal}, Cantidad: $quantity")
         }
+    }
+
+    @SuppressLint("MissingSuperCall")
+    override fun onDestroy() {
+        super.onDestroyView()
+
+        val navBar = activity?.findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+        navBar?.visibility = View.VISIBLE
+
     }
 
     companion object {

@@ -40,7 +40,7 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="135dp"
-                        android:src="@drawable/arrozconpollo"
+                        android:src="@drawable/img_arrozconpollo"
                         android:scaleType="centerCrop" />
 
                     <Button
@@ -72,7 +72,7 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="135dp"
-                        android:src="@drawable/empanadas"
+                        android:src="@drawable/img_empanadas"
                         android:scaleType="centerCrop" />
 
                     <Button
@@ -104,7 +104,7 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="135dp"
-                        android:src="@drawable/pollofrito"
+                        android:src="@drawable/img_pollofrito"
                         android:scaleType="centerCrop" />
 
                     <Button
@@ -169,7 +169,7 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="135dp"
-                        android:src="@drawable/bannercomida"
+                        android:src="@drawable/img_bannercomida"
                         android:scaleType="centerCrop" />
 
                     <Button

@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/fondoColor"
     android:gravity="center"
     android:orientation="vertical"
@@ -12,7 +13,7 @@
         android:id="@+id/confirmacion_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/confirmacion" />
+        android:src="@drawable/img_confirmacion" />
 
     <TextView
         android:id="@+id/confirmacion_text"
@@ -22,5 +23,22 @@
         android:text="ORDEN CONFIRMADA!"
         android:textColor="@color/black"
         android:textSize="30sp" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/back_home"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/button_custom_oranje"
+        app:backgroundTint="@null"
+        android:gravity="center_horizontal"
+        android:padding="12dp"
+        android:fontFamily="@font/baloo_chettan"
+        android:text="HOME"
+        android:textColor="@color/white"
+        android:layout_marginTop="50dp"
+        />
+
 
 </LinearLayout>

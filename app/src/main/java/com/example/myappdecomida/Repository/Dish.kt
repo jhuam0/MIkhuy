@@ -1,4 +1,4 @@
-package com.example.myappdecomida
+package com.example.myappdecomida.Repository
 
 import android.os.Parcel
 import android.os.Parcelable
