@@ -13,12 +13,16 @@
         <action
             android:id="@+id/action_home2_to_carritoCompras"
             app:destination="@id/carritoCompras" />
+        <action
+            android:id="@+id/action_home2_to_comida"
+            app:destination="@id/comida" />
     </fragment>
     <fragment
         android:id="@+id/carritoCompras"
         android:name="com.example.myappdecomida.CarritoCompras"
         android:label="fragment_carrito_compras"
         tools:layout="@layout/fragment_carrito_compras" >
+
         <action
             android:id="@+id/action_carritoCompras_to_confirmarPedido"
             app:destination="@id/confirmarPedido" />
@@ -35,8 +39,8 @@
             android:id="@+id/action_confirmarPedido_to_pago"
             app:destination="@id/pago" />
         <action
-            android:id="@+id/action_confirmarPedido_to_home2"
-            app:destination="@id/home2" />
+            android:id="@+id/action_confirmarPedido_to_carritoCompras"
+            app:destination="@id/carritoCompras" />
     </fragment>
     <fragment
         android:id="@+id/pago"
@@ -63,5 +67,34 @@
             app:destination="@id/home2" />
     </fragment>
 
+    <fragment
+        android:id="@+id/comida"
+        android:name="com.example.myappdecomida.comida.Comida"
+        android:label="Comida"
+        tools:layout="@layout/fragment_comida" >
+        <action
+            android:id="@+id/action_comida_to_mealDetailFragment"
+            app:destination="@id/mealDetailFragment" >
+            <argument
+                android:name="strMeal"
+                app:argType="string" />
+            <argument
+                android:name="strMealThumb"
+                app:argType="string" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/mealDetailFragment"
+        android:name="com.example.myappdecomida.MealDetailFragment"
+        android:label="Meal Detail"
+        tools:layout="@layout/fragment_meal_detail" >
+        <argument
+            android:name="meal"
+            app:argType="com.example.myappdecomida.comida.Meal" />
+        <action
+            android:id="@+id/action_mealDetailFragment_to_comida"
+            app:destination="@id/comida" />
+    </fragment>
 
 </navigation>

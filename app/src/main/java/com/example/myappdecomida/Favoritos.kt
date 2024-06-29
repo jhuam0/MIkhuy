@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.GridLayout
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -27,27 +28,30 @@ class Favoritos : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val favoritesLayout = view.findViewById<LinearLayout>(R.id.favorites_layout)
+        val gridLayout = view.findViewById<GridLayout>(R.id.favorites_layout)
         val layoutInflater = LayoutInflater.from(context)
 
         for (item in FavoritosData.items) {
-            val productView = layoutInflater.inflate(R.layout.meal_item, favoritesLayout, false)
+            val productView = layoutInflater.inflate(R.layout.meal_item, null)
 
             val nameView = productView.findViewById<TextView>(R.id.meal_name)
             nameView.text = item.strMeal
 
             val imageView = productView.findViewById<ImageView>(R.id.meal_image)
-            Picasso.get().load(item.strMealThumb).into(imageView) // Aquí se carga la imagen del producto
+            Picasso.get().load(item.strMealThumb).into(imageView)
 
             val heartButton = productView.findViewById<Button>(R.id.heart_button)
-            heartButton.setBackgroundResource(R.drawable.ic_favoritorelleno) // Establece el corazón como lleno
+            heartButton.setBackgroundResource(R.drawable.ic_favoritorelleno)
 
             heartButton.setOnClickListener {
                 FavoritosData.items.remove(item)
-                favoritesLayout.removeView(productView)
+                gridLayout.removeView(productView)
             }
 
-            favoritesLayout.addView(productView)
+            val params = GridLayout.LayoutParams()
+            params.columnSpec = GridLayout.spec(GridLayout.UNDEFINED, 1f)
+            params.rowSpec = GridLayout.spec(GridLayout.UNDEFINED, 1f)
+            gridLayout.addView(productView, params)
         }
     }
 }

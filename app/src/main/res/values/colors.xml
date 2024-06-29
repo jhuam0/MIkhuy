@@ -22,4 +22,5 @@
     <color name="botonesColor">#E95322</color>
     <color name="botonColorSegundo">#FFDECF</color>
     <color name="fondoColor">#F8C595</color>
+    <color name="colorFondoAlternativa">#F4F4F4</color>
 </resources>

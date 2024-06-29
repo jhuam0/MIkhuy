@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.ListView
 import android.widget.TextView
@@ -76,14 +77,11 @@ class Pago : Fragment() {
         orderButton.setOnClickListener {
             findNavController().navigate(R.id.action_pago_to_confirmacion)
         }
-        val backButtonConfirmarCompra = view.findViewById<Button>(R.id.back_confirmar_compra)
-        orderButton.setOnClickListener {
+        val backButton = view.findViewById<ImageView>(R.id.back_confirmar_compra)
+        backButton.setOnClickListener {
             findNavController().navigate(R.id.action_pago_to_confirmarPedido)
         }
-        val backHome = view.findViewById<Button>(R.id.back_home)
-        backHome.setOnClickListener {
-            findNavController().navigate(R.id.action_confirmacion_to_home2)
-        }
+        
     }
 
     companion object {

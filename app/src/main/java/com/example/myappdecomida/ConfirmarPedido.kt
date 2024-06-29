@@ -11,6 +11,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.versionedparcelable.VersionedParcelize
 import com.example.myappdecomida.Repository.Dish
 import com.example.myappdecomida.comida.Cart
 import com.squareup.picasso.Picasso
@@ -32,6 +33,7 @@ class ConfirmarPedido : Fragment() {
     ): View? {
         return inflater.inflate(R.layout.fragment_confirmar_pedido, container, false)
     }
+
     data class Meal(
         val strMeal: String, // nombre de la comida
         val strMealThumb: String, // URL de la imagen de la comida
@@ -114,9 +116,9 @@ class ConfirmarPedido : Fragment() {
             findNavController().navigate(action, bundle)
         }
 
-        val back_carrito_compras = view.findViewById<Button>(R.id.back_carrito_compras)
-        confirmButton.setOnClickListener {
-            val action = R.id.action_confirmarPedido_to_home2
+        val back_carrito_compras = view.findViewById<ImageView>(R.id.back_carrito_compras)
+        back_carrito_compras.setOnClickListener {
+            val action = R.id.action_confirmarPedido_to_carritoCompras
             findNavController().navigate(action)
         }
 

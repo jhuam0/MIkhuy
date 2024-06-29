@@ -1,6 +1,7 @@
 package com.example.myappdecomida
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -48,9 +49,10 @@ class CarritoCompras : Fragment() {
             findNavController().navigate(R.id.action_carritoCompras_to_confirmarPedido, bundle)
         }
 
-        val backButton = view.findViewById<Button>(R.id.back_confirmar_compra)
+        val backButton = view.findViewById<ImageView>(R.id.back_confirmar_compra)
         backButton.setOnClickListener {
-            findNavController().navigate(R.id.action_carritoCompras_to_home2)
+            val intent = Intent(activity, NavBar::class.java)
+            startActivity(intent)
         }
 
         val cartLayout = view.findViewById<LinearLayout>(R.id.cart_layout)

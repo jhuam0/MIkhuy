@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Favoritos"
-    android:background="@color/colorFondo"
+    android:background="@color/colorFondoAlternativa"
     >
 
     <!-- TODO: Update blank fragment layout -->
@@ -25,7 +25,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Favoritos"
-                android:textColor="@color/white"
+                android:textColor="@color/botonesColor"
                 android:textSize="30dp"
                 android:fontFamily="@font/baloo_chettan"
                 android:textStyle="bold" />
@@ -45,20 +45,22 @@
 
         </EditText>
         <HorizontalScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="16dp">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
 
-            <LinearLayout
-                android:id="@+id/favorites_layout"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:padding="10dp">
+    <GridLayout
+        android:id="@+id/favorites_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:columnCount="2"
+        android:padding="10dp"
 
-            </LinearLayout>
+        >
 
-        </HorizontalScrollView>
+    </GridLayout>
+
+</HorizontalScrollView>
     </LinearLayout>
 
 

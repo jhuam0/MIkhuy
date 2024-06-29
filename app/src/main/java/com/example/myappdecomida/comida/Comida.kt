@@ -24,11 +24,12 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.io.IOException
 import kotlin.math.min
+import java.io.Serializable
 
 data class Meal(
     val strMeal: String, // nombre de la comida
     val strMealThumb: String // URL de la imagen de la comida
-)
+) : Serializable
 
 object Cart {
     val items = mutableMapOf<Meal, Int>()
