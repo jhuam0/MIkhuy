@@ -55,7 +55,6 @@
                     android:text="Canceladas" />
 
             </LinearLayout>
-
         </androidx.cardview.widget.CardView>
 
     </LinearLayout>

@@ -66,6 +66,5 @@
         android:fontFamily="@font/baloo_chettan"
         android:text="Confirmar"
         android:textColor="@color/white" />
-
 </RelativeLayout>
 

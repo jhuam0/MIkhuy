@@ -75,7 +75,7 @@
             android:id="@+id/total_sum"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Total: "
+            android:text="Total:"
             android:background="@drawable/border"
             android:padding="10dp"
             android:fontFamily="@font/baloo_chettan"

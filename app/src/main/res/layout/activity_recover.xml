@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="@drawable/img_bannercomida2"
+    android:background="@drawable/bannercomidac"
     tools:context=".MainActivity">
 
     <androidx.cardview.widget.CardView
@@ -98,7 +98,6 @@
                     android:textColor="#0D66FF"
                     android:linksClickable="true"
                     android:onClick="onLoginLink2Clicked"/>
-
             </LinearLayout>
 
         </LinearLayout>

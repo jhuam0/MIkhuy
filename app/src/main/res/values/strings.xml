@@ -1,6 +1,6 @@
 <resources>
     <!--  sign_in strings  -->
-    <string name="app_name">My app de comida</string>
+    <string name="app_name">Mikhuy</string>
     <string name="ek_img_content">ExportKit Image</string>
     <string name="sign_up_string">Iniciar Sesión</string>
     <string name="full_name_string">Contraseña</string>

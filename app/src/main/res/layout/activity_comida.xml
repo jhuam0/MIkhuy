@@ -182,7 +182,7 @@
 
             </androidx.cardview.widget.CardView>
 
-            <!-- Añade más productos hasta completar 10 filas (20 productos) -->
+
 
         </GridLayout>
     </ScrollView>

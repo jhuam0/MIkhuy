@@ -39,7 +39,7 @@
                 android:layout_width="284dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="6dp"
-                android:text="Bienvenido, Luis"
+                android:text="Bienvenido, Juampa"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
 

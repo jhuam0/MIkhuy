@@ -42,7 +42,6 @@
             android:layout_height="36dp"
 
             android:background="@drawable/ic_cancel"/>
-
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="@drawable/img_bannercomida2"
+    android:background="@drawable/bannercomidac"
     tools:context=".actividades.ActivitySignUp">
 
     <androidx.cardview.widget.CardView
@@ -151,7 +151,6 @@
                     />
 
             </LinearLayout>
-
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

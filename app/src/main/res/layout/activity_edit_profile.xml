@@ -121,7 +121,6 @@
                 android:background="@drawable/custom_button"
                 />
 
-
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

@@ -3,8 +3,10 @@ package com.example.myappdecomida.actividades
 import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
+import android.text.TextUtils
 import android.view.View
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -18,45 +20,58 @@ import java.util.regex.Pattern
 class ActivitySignUp : AppCompatActivity(){
 
     private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var signupbutton: Button
+    private lateinit var names: EditText
+    private lateinit var email: EditText
+    private lateinit var uuser: EditText
+    private lateinit var spassword2: EditText
+    private lateinit var spassword: EditText
+    private lateinit var db: DBHelper
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup)
 
         //Variables del signup
-        val names : TextView = findViewById(R.id.signup_name)
-        val email : TextView = findViewById(R.id.signup_email)
-        val user : TextView = findViewById(R.id.signup_username)
-        val spassword : TextView = findViewById(R.id.signup_password)
-        val spassword2 : TextView = findViewById(R.id.signup_password2)
-        val signupbutton : Button = findViewById(R.id.signup_button)
+        names  = findViewById(R.id.signup_name)
+        email  = findViewById(R.id.signup_email)
+        uuser  = findViewById(R.id.signup_username)
+        spassword = findViewById(R.id.signup_password)
+        spassword2 = findViewById(R.id.signup_password2)
+        signupbutton  = findViewById(R.id.signup_button)
+
+        db = DBHelper(this)
 
         signupbutton.setOnClickListener {
-            val pass1 = spassword.text.toString()
-            val pass2 = spassword2.text.toString()
+            val user =email .text.toString().trim()
+            val pwd = spassword.text.toString().trim()
+            val cpwd = spassword2.text.toString().trim()
+            val savedata = db.insertData(user, pwd)
 
-            if (pass1 == pass2) {
-                if (isValidPassword(pass1)) {
-                    createAccount(email.text.toString(), pass1)
-                } else {
-                    val builder = AlertDialog.Builder(this)
-                    builder.setTitle("Mensaje de advertencia")
-                    builder.setMessage("La contraseña no cumple con los requisitos, debe contener una mayúscula, un número, un caracter especial y debe tener un máximo de 8 caracteres")
-                    builder.setPositiveButton("OK", null)
-                    val dialog = builder.create()
-                    dialog.show()
-                    spassword.requestFocus()
+            if (TextUtils.isEmpty(user)|| TextUtils.isEmpty(pwd) || TextUtils.isEmpty(cpwd)){
+                Toast.makeText(this, "Por favor llena todos los campos", Toast.LENGTH_SHORT).show()}
+            else{
+                if(pwd.equals(cpwd)){
+                    if(savedata == true){
+                        Toast.makeText(this, "Registro exitoso", Toast.LENGTH_SHORT).show()
+                        val intent = Intent(this, MainActivity::class.java)
+                        startActivity(intent)
+                    }
+                    else{
+                        Toast.makeText(this, "Error al registrar", Toast.LENGTH_SHORT).show()
+                    }
                 }
-            } else {
-                Toast.makeText(this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show()
-                spassword.requestFocus()
+                else{
+                    Toast.makeText(this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show()
+                }
             }
         }
-        firebaseAuth = Firebase.auth
+
     }
 
     fun isValidPassword(password: String): Boolean {
-        val pattern = Pattern.compile("^(?=.*[A-Z])(?=.*\\d)(?=.*[!\\?])[A-Za-z\\d!\\?]{1,8}\$")
+        val pattern = Pattern.compile("^(?=.[A-Z])(?=.\\d)(?=.*[!\\?])[A-Za-z\\d!\\?]{1,8}\$")
         val matcher = pattern.matcher(password)
         return matcher.matches()
     }

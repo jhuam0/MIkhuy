@@ -11,8 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="16dp"
-        android:scrollbars="none"
-        >
+        android:scrollbars="none">
 
 
     </ScrollView>
@@ -49,7 +48,7 @@
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="6dp"
-                android:text="Bienvenido, Luis"
+                android:text="Bienvenido,Juampa"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
 
@@ -266,7 +265,7 @@
             >
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/linearLayout2"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="@color/white"
                 android:paddingTop="0dp"
